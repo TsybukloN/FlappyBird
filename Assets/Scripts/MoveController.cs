@@ -21,6 +21,11 @@ public class MoveController : MonoBehaviour
     
     void Update()
     {
+        if(Bird_Controller.GameOver || !Bird_Controller.IsStarted)
+        {
+            return;
+        }
+
         transform.position = new Vector3(
             transform.position.x - Speed * Time.deltaTime,
             transform.position.y, 
